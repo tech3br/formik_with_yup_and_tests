@@ -39,7 +39,12 @@ export const MyForm = () => {
 
 	return (
 		<form className="form" onSubmit={formik.handleSubmit}>
-			<label className="label" htmlFor="firstName">
+			<label
+				className="label"
+				htmlFor="firstName"
+				style={{
+					color: formik.errors.firstName ? 'red' : 'black',
+				}}>
 				Nome
 			</label>
 			<input
@@ -63,7 +68,14 @@ export const MyForm = () => {
 					{formik.errors.firstName}
 				</div>
 			) : null}
-			<label className="label" htmlFor="lastName">
+			<label
+				className="label"
+				htmlFor="lastName"
+				style={{
+					border: formik.errors.lastName
+						? '1px solid red'
+						: '1px solid black',
+				}}>
 				Sobrenome
 			</label>
 			<input
@@ -73,6 +85,11 @@ export const MyForm = () => {
 				type="text"
 				onChange={formik.handleChange}
 				value={formik.values.lastName}
+				style={{
+					border: formik.errors.lastName
+						? '1px solid red'
+						: '1px solid black',
+				}}
 			/>
 			{formik.errors.lastName && formik.touched.lastName ? (
 				<div
@@ -92,6 +109,11 @@ export const MyForm = () => {
 				type="email"
 				onChange={formik.handleChange}
 				value={formik.values.email}
+				style={{
+					border: formik.errors.firstName
+						? '1px solid red'
+						: '1px solid black',
+				}}
 			/>
 			{formik.errors.email && formik.touched.email ? (
 				<div
