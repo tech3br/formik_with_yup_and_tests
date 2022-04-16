@@ -1,2 +1,3 @@
-# formik_with_yup_and_tests
-Created with CodeSandbox
+# testes-com-jest
+
+Um contador para estudar a biblioteca jest e @testing-library/react
